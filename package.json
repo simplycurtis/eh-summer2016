@@ -1,0 +1,61 @@
+{
+  "name": "build-tool",
+  "version": "0.0.1",
+  "description": "eagle hill radio ad landing page",
+  "scripts": {
+    "info": "echo 'Building via npm'",
+    "compile-bootstrap": "echo 'compiling bootstrap' && lessc node_modules/bootstrap/less/bootstrap.less tmp/bootstrap.css",
+    "compile-less": "echo 'compiling less' && lessc less/modern.less tmp/modern.css",
+    "combine-css": "echo 'combining files' && cat css/normalize.min.css tmp/modern.css | cleancss -o css/main.css",
+    "build-css": "npm run compile-bootstrap && npm run compile-less && npm run combine-css",
+    "watch": "watch \"npm run build-css\" less",
+    "build-js": "browserify js/main.js -o js/bundle.js",
+
+
+    "dist-files": "echo 'building distro -> step 1' && npm run build-css && npm run build-js",
+    "dist-folder": "echo 'building distro -> step 2' && rm -rf dist && mkdir dist && mkdir dist/css && mkdir dist/js",
+    "dist-html": "echo 'building distro -> step 3' && cp index.html dist/index.html && cp thankyou.html dist/thankyou.html && cp contact-handler.php dist/contact-handler.php",
+    "dist-js": "echo 'building distro -> step 4' && cp js/plugins.js dist/js/plugins.js && cp js/bundle.js dist/js/bundle.js && cp node_modules/bootstrap/dist/js/bootstrap.min.js dist/js/bootstrap.min.js",
+    "dist-css": "echo 'building distro -> step 5' && cp css/main.css dist/css/main.css",
+    "dist-ext": "echo 'building distro -> step 6' && cp -aR img dist/img && cp -aR recapcha dist/recapcha",
+
+    "note": "/// main building script ",
+    "note": "/// assumes: global browserify   (npm install -g browserify) ",
+    "note": "/// assumes: global less         (npm install -g less) ",
+    "note": "/// assumes: global clean-css    (npm install -g clean-css) ",
+    "note": "/// assumes: global watch        (npm install -g watch) ",
+    "note": "/// use to build distribution dir /dist ",
+    
+    "build-dist-mac": "echo 'building distro' && npm run dist-files && npm run dist-folder && npm run dist-html && npm run dist-js && npm run dist-css && npm run dist-ext",
+    "build-dist-win": "echo 'building distro' && npm run dist-files && sh dist-make.sh",
+    "note": "/////////////////////////////////////// "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://simplycurtis@bitbucket.org/cchangeinc/ciscotechcheck.git"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "bootstrap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    }
+  },
+  "author": "curtis",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/cchangeinc/eagle-hill#readme",
+  "devDependencies": {
+    "modernizr": "^3.0.0",
+    "jquery": "^1.11.2",
+    "bootstrap": "^3.3.5",
+    "browserify-shim": "~3.4.1"
+  },
+  "dependencies": {
+    "jquery": "^1.11.2"
+  }
+}

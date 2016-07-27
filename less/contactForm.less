@@ -1,0 +1,82 @@
+//
+// contactForm
+// --------------------------------------------------
+
+.contactForm {
+  width: 100%;
+  margin: 2em auto 0 auto;
+}
+
+.contactForm-bd { 
+  position: relative; 
+  font-family: @font-family-brand;
+  font-size: @font-size-base;
+  line-height: 1;
+}
+
+.contactForm-input {
+  width: 100%;
+  padding: 20px 28% 20px 30px;
+  border: 0;
+  font-family: @font-family-brand;
+  font-size: @font-size-base;
+  line-height: 1;
+  outline-color: @gray-lighter;
+}
+
+.contactForm-label {
+  position: absolute;
+  top: 25%;
+  left: 30px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+input.focused + label {
+  top: 0;
+  font-size: @font-size-small;
+}
+
+.contactForm .btn {
+  width: 100%;
+  padding: 21px 5px;
+  font-size: @font-size-base;
+  line-height: 1;
+  background-color: @brand-primary;
+  color: @light;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+.contactForm .btn:hover {
+  background-color: darken(@brand-primary, 10%);
+}
+
+.g-recaptcha {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  margin: 20px 0 0 0;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.g-recaptcha.visible {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .contactForm { width: 60%; }
+  .contactForm-label { top: 50%; }
+
+  .contactForm .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+  }
+}

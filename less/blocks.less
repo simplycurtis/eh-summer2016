@@ -1,0 +1,38 @@
+//
+// blocks
+// --------------------------------------------------
+.blocks {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style: none;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.blocks > * {
+  box-sizing: border-box;
+  font-size: @font-size-base;
+  position: relative;
+  width: 100%;
+}
+
+.blocks_2up { width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .blocks_2up > * { width: 50%; }
+  .blocks_3up > * { width: 33.333%; }
+}
+
+.tier_cards > *:nth-of-type(2n) > * {
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}

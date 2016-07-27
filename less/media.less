@@ -1,0 +1,57 @@
+//
+// media
+// --------------------------------------------------
+
+.media {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.media-md {
+	width: 100%;
+	
+}
+
+.media-bd {
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+
+.mx-media_divider .media-md {
+	padding-bottom: 5%;
+}
+
+@media screen and (min-width: 768px) {
+	.media-md {
+		float: left;
+		width: 50%;
+		margin-right: 5%;
+	}
+    .media-bd { 
+    	width: 45%; 
+    	text-align: left;
+    }
+
+    .mx-media_divider .media-md {
+		padding-right: 5%;
+		padding-bottom: 0;
+		border-right: 2px solid #fff;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+    .media-bd { width: 34%; }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .media-bd { width: 29%; }
+}

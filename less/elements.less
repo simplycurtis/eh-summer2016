@@ -1,0 +1,45 @@
+//                                                   
+// elements
+// --------------------------------------------------
+
+@font-face {
+    font-family: 'NevisBold';
+    src: url('../fonts/nevis.eot');
+    src: url('../fonts/nevis.eot') format('embedded-opentype'),
+         url('../fonts/nevis.woff') format('woff'),
+         url('../fonts/nevis.ttf') format('truetype'),
+         url('../fonts/nevis.svg#NevisBold') format('svg');
+}
+
+@font-face {
+    font-family: 'vincehand_ii_trialregular';
+    src: url('../fonts/vh2trial-webfont.eot');
+    src: url('../fonts/vh2trial-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/vh2trial-webfont.woff') format('woff'),
+         url('../fonts/vh2trial-webfont.ttf') format('truetype'),
+         url('../fonts/vh2trial-webfont.svg#vincehand_ii_trialregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {}
+body {
+	overflow-y: scroll;
+	background-color: @gray-lighter;
+    text-align: center;
+    font-size: @font-size-base;
+}
+
+blockquote {
+	border-left: none;
+	font-size: @font-size-h4;
+	font-family: NevisBold, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 40px 10% 50px 10%;
+}
+
+p { display: block; margin: 0; } //resets for flex
+
+p + p { margin: 2em 0 0; }

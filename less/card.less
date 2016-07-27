@@ -1,0 +1,40 @@
+//
+// card
+// --------------------------------------------------
+
+.card {  
+  position: relative;
+
+  .clearfix();
+}
+
+.card_background { 
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card-bd { 
+  display: block;
+  padding: 30px 14%;
+}
+
+//backgrounds
+.mx-card_strategy { background-image: url(../img/card/strategy.png); background-color: @brand-secondary; }
+.mx-card_process { background-image: url(../img/card/process.png); background-color: @brand-tertiary; }
+.mx-card_organizational { background-image: url(../img/card/organizational.png); background-color: @brand-primary; }
+.mx-card_change { background-image: url(../img/card/change.png); background-color: @brand-quatrinary; }
+.mx-card_program { background-image: url(../img/card/program.png); background-color: @brand-quinary; }
+.mx-card_human { background-image: url(../img/card/human.png); background-color: @brand-senary; }
+
+// align
+.mx-card_center { text-align: center; }
+.mx-card_center > * > img { margin-left: auto; margin-right: auto; }
+.mx-card_left { text-align: center; }
+.mx-card_right { text-align: center; }
+
+@media screen and (min-width: 768px) {
+  .card-bd { padding: 87px 14%; }
+
+  .mx-card_left { text-align: left; }
+  .mx-card_right { text-align: right; }
+}
